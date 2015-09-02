@@ -152,11 +152,6 @@ hr {
   width: 25%;
   margin: 5% auto;
 }
-.woocommerce form.checkout table.shop_table th, .woocommerce form.checkout table.shop_table td {
-    padding: 10px;
-    text-align: left !important;
-}
-
 .vc_row.row-image-overlay.light h1,
 .wpb_tabstabs_holder.ps-content-slider h1,
 section.parallax_section_holder.light h1,
@@ -363,6 +358,13 @@ section.parallax_section_holder.light blockquote:before {
 .sk-fading-circle .sk-circle12:before {
   animation-delay: -0.1s;
 }
+
+
+.woocommerce form.checkout table.shop_table th, .woocommerce form.checkout table.shop_table td {
+    padding: 10px;
+    text-align: left !important;
+}
+
 @-webkit-keyframes sk-circleFadeDelay {
   0%,
   39%,
@@ -1436,6 +1438,24 @@ input.wpcf7-form-control.wpcf7-quiz:focus,
     top: -22px;
 }
 
+#order_review .woocommerce-checkout-payment {
+    margin-bottom: 0px;
+    margin-top: 50px;
+}
+
+#_mc4wp_subscribe_woocommerce_checkout_field .checkbox {margin-left:0px;}
+.form-row.terms {
+    padding-bottom: 0;
+}
+#s2id_shipping_country .select2-chosen{ padding: 2.2% 0.2% !important; line-height: 10px !important;}
+#shipping_country_field{height:56px !important;}
+#s2id_shipping_country .select2-chosen{width: 101% !important;}
+#payment input#place_order{float:none;}
+#s2id_shipping_country{width: 50% !important;}
+#order_review .product-name th{text-align:left;}
+
+
+
 .woocommerce .select2-container .select2-choice,
 .woocommerce-page .select2-container .select2-choice,
 .woocommerce div.cart-collaterals .select2-container .select2-choice,
@@ -1553,7 +1573,7 @@ input.wpcf7-form-control.wpcf7-quiz:focus,
   border-radius: 10px;
   text-transform: none;
   font-weight: 500;
-  font-size: 16px;
+  font-size: 13px; line-height:23px;
 }
 .woocommerce.woocommerce-checkout .woocommerce-error,
 .woocommerce-page.woocommerce-checkout .woocommerce-error {
@@ -1563,6 +1583,11 @@ input.wpcf7-form-control.wpcf7-quiz:focus,
 .woocommerce-page.woocommerce-checkout .woocommerce-info {
   background: #eefafc;
 }
+
+.container_inner .woocommerce-info{background:none !important;}
+.container_inner .woocommerce-info{float:left;}
+#coupon_code{width: 111px;}
+
 .woocommerce.woocommerce-checkout .woocommerce-message,
 .woocommerce-page.woocommerce-checkout .woocommerce-message {
   background: #fffbde;
@@ -2771,8 +2796,13 @@ figure {
     padding: 1.5% 2.2% !important;
 }
 
+.minicart-prod-details {
+    padding-bottom: 14px; line-height: 25px; 
+    border-bottom: solid 1px #E8E6E6;
+}
+
 .woocommerce p.form-row {
-    margin-bottom: 5px;
+    margin-bottom: 0px;
 }
 .select2-choice {
     height: auto !important;
@@ -2793,6 +2823,16 @@ top:-5px !important;
 top:-7px;
 }
 #billing_country_field {height:auto !important;}
+
+#shipping_country_field.select2-chosen, select2-chosen-1{ padding: 1% 0.2% !important;}
+
+.woocommerce form.checkout_coupon {
+	display: block !important;
+}
+#_mc4wp_subscribe_woocommerce_checkout_field {
+ 	display: block;
+}
+.woocommerce .showcoupon{display:none;}
 
 /* POPUP MAKER CODE */
 
@@ -2962,18 +3002,20 @@ html.popup-open, .popup-open body {
 .page_container_inner{padding: 0px 0 30px !important;}
 .woocommerce .woocommerce-info{padding:0px 11px; margin-bottom:0px;}
 
-.woocommerce-shipping-fields .input-text{padding: 8px 13px !important; width:100%;}
+.woocommerce-shipping-fields .input-text{padding: 8px 13px !important; width:47%;}
 #billing_state_field .input-text {padding: 8px 13px !important;}
 
 #minicart-inner {
     background-color: #ffffff; 
     font-size: 14px;
     padding: 14px 22px;
-    right: 10px;
-    top: 70px;
+   right: 118px;
+   top: 100px;
 	visibility: hidden;
     z-index: 9999; 
-	 position: fixed; 
+	color:#000;
+	 position: fixed;
+line-height: 27px;	 
 	box-shadow: 0 0 10px rgba(0,0,0,0.6); -moz-box-shadow: 0 0 10px rgba(0,0,0,0.6); -webkit-box-shadow: 0 0 10px rgba(0,0,0,0.6); -o-box-shadow: 0 0 10px rgba(0,0,0,0.6);
 
 .minicart-prod-img {
@@ -2983,11 +3025,6 @@ html.popup-open, .popup-open body {
     padding: 4px;
     margin: 12px 2px;
     width: 100px;
-}
-
-.minicart-prod-details {
-    padding-bottom: 14px; line-height: 25px; 
-    border-bottom: solid 1px #ccc;
 }	
 
 div#minicart-summary {
@@ -2995,3 +3032,4 @@ div#minicart-summary {
     line-height: 25px;
 }
 
+ul.woocommerce-error{margin-bottom:0px !important; }
