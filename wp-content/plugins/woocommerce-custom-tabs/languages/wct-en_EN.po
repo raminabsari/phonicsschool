@@ -1,0 +1,238 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: wct\n"
+"POT-Creation-Date: 2014-01-25 22:59+0100\n"
+"PO-Revision-Date: 2014-01-25 22:59+0100\n"
+"Last-Translator: \n"
+"Language-Team: WebShopLogic\n"
+"Language: EN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.5.7\n"
+"X-Poedit-KeywordsList: __;_e;_x\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-SearchPath-0: D:\\wamp\\www\\wp-content\\plugins"
+"\\woocommerce_custom_tabs\n"
+
+#: D:\wamp\www\wp-content\plugins\woocommerce_custom_tabs/WCT-admin-page.php:13
+msgid "WooCommerce Custom Tabs"
+msgstr ""
+
+#: D:\wamp\www\wp-content\plugins\woocommerce_custom_tabs/WCT-admin-page.php:34
+#: D:\wamp\www\wp-content\plugins\woocommerce_custom_tabs/WCT-admin-page.php:150
+msgid "General Settings"
+msgstr ""
+
+#: D:\wamp\www\wp-content\plugins\woocommerce_custom_tabs/WCT-admin-page.php:42
+#: D:\wamp\www\wp-content\plugins\woocommerce_custom_tabs/WCT-admin-page.php:158
+msgid "Enable WooCommerce Custom Tabs Plugin"
+msgstr ""
+
+#: D:\wamp\www\wp-content\plugins\woocommerce_custom_tabs/WCT-admin-page.php:51
+#: D:\wamp\www\wp-content\plugins\woocommerce_custom_tabs/WCT-admin-page.php:187
+msgid "Enable product category dependent product tab pages (PRO)"
+msgstr ""
+
+#: D:\wamp\www\wp-content\plugins\woocommerce_custom_tabs/WCT-admin-page.php:59
+#: D:\wamp\www\wp-content\plugins\woocommerce_custom_tabs/WCT-admin-page.php:171
+msgid "Hide empty tabs"
+msgstr ""
+
+#: D:\wamp\www\wp-content\plugins\woocommerce_custom_tabs/WCT-admin-page.php:67
+#: D:\wamp\www\wp-content\plugins\woocommerce_custom_tabs/WCT-admin-page.php:202
+msgid "Name of your tab (especially for Lite version)"
+msgstr ""
+
+#: D:\wamp\www\wp-content\plugins\woocommerce_custom_tabs/WCT-admin-page.php:75
+#: D:\wamp\www\wp-content\plugins\woocommerce_custom_tabs/WCT-admin-page.php:215
+msgid "Priority of your tab (especially for Lite version)"
+msgstr ""
+
+#: D:\wamp\www\wp-content\plugins\woocommerce_custom_tabs/WCT-admin-page.php:85
+msgid "Enable multiple tabpage administration test"
+msgstr ""
+
+#: D:\wamp\www\wp-content\plugins\woocommerce_custom_tabs/WCT-admin-page.php:131
+msgid ""
+"This plugin is based on WooCommerce plugin. Please install and activate <a "
+"href=\"http://wordpress.org/plugins/woocommerce/\" target=\"_blank"
+"\">WooCommerce - excelling eCommerce</a> first."
+msgstr ""
+
+#: D:\wamp\www\wp-content\plugins\woocommerce_custom_tabs/WCT-admin-page.php:138
+msgid "WooCommerce Custom Tabs by WebshopLogic"
+msgstr ""
+
+#: D:\wamp\www\wp-content\plugins\woocommerce_custom_tabs/WCT-admin-page.php:179
+msgid "Set this option on to hide empty tabs automatically."
+msgstr ""
+
+#: D:\wamp\www\wp-content\plugins\woocommerce_custom_tabs/WCT-admin-page.php:195
+msgid ""
+"There are two custom tab types. One of them is visible on all products, the "
+"other tab type is displayed only if you assign it to a product category, and "
+"the actually displayed product has this category. You can turn on/off this "
+"second type of functionality using this checkbox. The other settings can be "
+"made in Product Tabs menu."
+msgstr ""
+
+#: D:\wamp\www\wp-content\plugins\woocommerce_custom_tabs/WCT-admin-page.php:197
+msgid ""
+"These functionality available in Pro version, and you can test "
+"administration of tab pages if you turn on testing of multiple tab "
+"administration option in lite version below."
+msgstr ""
+
+#: D:\wamp\www\wp-content\plugins\woocommerce_custom_tabs/WCT-admin-page.php:209
+msgid ""
+"You can use one special tab page independently of multiple tab page "
+"handling. In Lite version this tab will be displayed. This field contains "
+"the name of this tab page, leave this field empty if you want to hide this "
+"tab page."
+msgstr ""
+
+#: D:\wamp\www\wp-content\plugins\woocommerce_custom_tabs/WCT-admin-page.php:222
+msgid "Priority is affected on the order of tab pages."
+msgstr ""
+
+#: D:\wamp\www\wp-content\plugins\woocommerce_custom_tabs/WCT-admin-page.php:233
+msgid "Enable evaluation of multiple tab administration in Lite version"
+msgstr ""
+
+#: D:\wamp\www\wp-content\plugins\woocommerce_custom_tabs/WCT-admin-page.php:241
+msgid ""
+"Turning this option on, you can define multiple tabs, the admin pages has "
+"full functionality for evaluation purposes, but the configured tab pages "
+"will be displayed only in Pro version. "
+msgstr ""
+
+#: D:\wamp\www\wp-content\plugins\woocommerce_custom_tabs/WCT-admin-page.php:282
+msgid "Try out WooCommerce Custom Tabs Pro"
+msgstr ""
+
+#: D:\wamp\www\wp-content\plugins\woocommerce_custom_tabs/WCT-admin-page.php:289
+msgid ""
+"As a good shop owner, you may want to publish more information about your "
+"products. This plugin will help you displaying product details in separate "
+"tab pages. Even shortcodes may be used to display galleries, product support "
+"forums (e. g. bbpress) and statistics."
+msgstr ""
+
+#: D:\wamp\www\wp-content\plugins\woocommerce_custom_tabs/WCT-admin-page.php:290
+msgid "PRO features"
+msgstr ""
+
+#: D:\wamp\www\wp-content\plugins\woocommerce_custom_tabs/WCT-admin-page.php:292
+msgid "Multiple tabs handling"
+msgstr ""
+
+#: D:\wamp\www\wp-content\plugins\woocommerce_custom_tabs/WCT-admin-page.php:293
+msgid ""
+"Pre register tabs, this way you can make standardised tabs for a bunch of "
+"products"
+msgstr ""
+
+#: D:\wamp\www\wp-content\plugins\woocommerce_custom_tabs/WCT-admin-page.php:294
+msgid "Product category dependent tab pages"
+msgstr ""
+
+#: D:\wamp\www\wp-content\plugins\woocommerce_custom_tabs/WCT-admin-page.php:295
+msgid "Possibility of using shortcode"
+msgstr ""
+
+#: D:\wamp\www\wp-content\plugins\woocommerce_custom_tabs/woocommerce_custom_tabs.php:277
+msgid "Product tabs"
+msgstr ""
+
+#: D:\wamp\www\wp-content\plugins\woocommerce_custom_tabs/woocommerce_custom_tabs.php:277
+#: D:\wamp\www\wp-content\plugins\woocommerce_custom_tabs/woocommerce_custom_tabs.php:278
+#: D:\wamp\www\wp-content\plugins\woocommerce_custom_tabs/woocommerce_custom_tabs.php:355
+#: D:\wamp\www\wp-content\plugins\woocommerce_custom_tabs/woocommerce_custom_tabs.php:368
+msgid "TEST"
+msgstr ""
+
+#: D:\wamp\www\wp-content\plugins\woocommerce_custom_tabs/woocommerce_custom_tabs.php:278
+msgid "Product tab"
+msgstr ""
+
+#: D:\wamp\www\wp-content\plugins\woocommerce_custom_tabs/woocommerce_custom_tabs.php:279
+msgid "Add New"
+msgstr ""
+
+#: D:\wamp\www\wp-content\plugins\woocommerce_custom_tabs/woocommerce_custom_tabs.php:280
+msgid "Add New Product Tab Type"
+msgstr ""
+
+#: D:\wamp\www\wp-content\plugins\woocommerce_custom_tabs/woocommerce_custom_tabs.php:281
+msgid "Edit Product Tab Type"
+msgstr ""
+
+#: D:\wamp\www\wp-content\plugins\woocommerce_custom_tabs/woocommerce_custom_tabs.php:282
+msgid "New Product Tab Type"
+msgstr ""
+
+#: D:\wamp\www\wp-content\plugins\woocommerce_custom_tabs/woocommerce_custom_tabs.php:283
+msgid "All Product Tab Type"
+msgstr ""
+
+#: D:\wamp\www\wp-content\plugins\woocommerce_custom_tabs/woocommerce_custom_tabs.php:284
+msgid "View Product Tab Type"
+msgstr ""
+
+#: D:\wamp\www\wp-content\plugins\woocommerce_custom_tabs/woocommerce_custom_tabs.php:285
+msgid "Search Product Tab Type"
+msgstr ""
+
+#: D:\wamp\www\wp-content\plugins\woocommerce_custom_tabs/woocommerce_custom_tabs.php:286
+msgid "No product tab types found"
+msgstr ""
+
+#: D:\wamp\www\wp-content\plugins\woocommerce_custom_tabs/woocommerce_custom_tabs.php:287
+msgid "No product tab type found in Trash"
+msgstr ""
+
+#: D:\wamp\www\wp-content\plugins\woocommerce_custom_tabs/woocommerce_custom_tabs.php:355
+#: D:\wamp\www\wp-content\plugins\woocommerce_custom_tabs/woocommerce_custom_tabs.php:387
+msgid "tab custom title (optional)"
+msgstr ""
+
+#: D:\wamp\www\wp-content\plugins\woocommerce_custom_tabs/woocommerce_custom_tabs.php:368
+#: D:\wamp\www\wp-content\plugins\woocommerce_custom_tabs/woocommerce_custom_tabs.php:401
+msgid "tab content"
+msgstr ""
+
+#: D:\wamp\www\wp-content\plugins\woocommerce_custom_tabs/woocommerce_custom_tabs.php:421
+msgid "Product tabpage group"
+msgstr ""
+
+#: D:\wamp\www\wp-content\plugins\woocommerce_custom_tabs/woocommerce_custom_tabs.php:459
+msgid "Product tab settings"
+msgstr ""
+
+#: D:\wamp\www\wp-content\plugins\woocommerce_custom_tabs/woocommerce_custom_tabs.php:463
+msgid "Use for all products"
+msgstr ""
+
+#: D:\wamp\www\wp-content\plugins\woocommerce_custom_tabs/woocommerce_custom_tabs.php:466
+msgid ""
+"If this checkbox is on, the tab page will be displayed for all products "
+"regardless of product category. The other way is to assign this tabpage type "
+"to product categories on the right side. This way this tab will be displayed "
+"only on those products, that has the same product categories that this tab. "
+"Make sure that \"Enable product category dependent product tab pages\" "
+"checkbox is turn on on WooCommerce Custom Tabs setting page, otherwise the "
+"category panel will not be displayed on the sidebar."
+msgstr ""
+
+#: D:\wamp\www\wp-content\plugins\woocommerce_custom_tabs/woocommerce_custom_tabs.php:472
+msgid "Tab page priority"
+msgstr ""
+
+#: D:\wamp\www\wp-content\plugins\woocommerce_custom_tabs/woocommerce_custom_tabs.php:476
+msgid ""
+"Determine the order of the tab pages. The higher priority means that the tab "
+"will appear backwards. Original WooCommerce tabs priority: Description=10, "
+"Additional Information=20, Reviews=30"
+msgstr ""

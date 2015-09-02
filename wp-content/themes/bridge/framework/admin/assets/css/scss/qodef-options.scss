@@ -1,0 +1,161 @@
+@import "mixins";
+@import "variables";
+
+/* ==========================================================================
+   General markup styles
+   ========================================================================== */
+.qodef-options-page {
+    table {
+        th {
+            font-weight: 400;
+        }
+    }
+} //close .qodef-options-page
+
+/* ==========================================================================
+   General typography styles
+   ========================================================================== */
+.qodef-options-page {
+    h1, h2, h3, h4, h5, h6 {
+        line-height: 1.5em;
+        margin-top: 0;
+		padding:0;
+    }
+
+    a {
+        &:hover,
+        &:focus {
+            text-decoration: none;
+        }
+    }
+
+} //close .qodef-options-page
+
+/* ==========================================================================
+   Page general styles
+   ========================================================================== */
+.qodef-options-page {
+    margin-top: 40px;
+
+    .qodef-page-header {
+        padding: 30px 20px;
+        background-color: #222;
+        color: #fff;
+
+        img.qodef-header-logo {
+            width: 40px;
+        } //close img.qodef-header-logo
+
+        .qodef-page-title {
+            color: #fff;
+            padding: 0;
+            margin: 0 0 0 20px;
+            line-height: 40px;
+        } //close .qodef-page-title
+
+    } //close .qodef-page-header
+
+    .qodef-page-content-wrapper {
+        border: 1px solid $qodef-border-color;
+        @include qodef-box-shadow(0 4px 4px -4px #ccc);
+
+		.qodef-page-title{
+			margin-bottom: 20px;
+		}
+
+        .qodef-page-section-title {
+			background-color: $qodef-title-background-color;
+            padding-bottom: 10px;
+            padding-top: 10px;
+			padding-left: 10px;
+        } //close .qodef-page-section-title
+
+		.qodef-page-content {
+			.qodef-tabs-wrapper {
+				&.vertical {
+
+					.qodef-tabs-navigation-wrapper {
+
+						@media only screen and (max-width: $first-break-point) {
+							width: 40px;
+						}
+
+						.nav-tabs {
+							li {
+
+								& > a {
+									& > i {
+										width: auto;
+									}
+								}
+
+								span {
+									@media only screen and (max-width: $first-break-point) {
+										display: none;
+									}
+								}
+
+							}
+						}
+					}
+
+					.qodef-tabs-content {
+
+						@media only screen and (max-width: $first-break-point) {
+							margin-left: 38px;
+						}
+
+					}
+				}
+			}
+
+
+			div.qodef-page-form {
+
+				.qodef-page-form-section-holder{
+					margin-bottom: 30px;
+				}
+
+				.qodef-page-form-section {
+					border-bottom: 1px solid $qodef-separator-color;
+                    display: table;
+                    width: 100%;
+
+					&:last-child {
+						//                    border-bottom: 0;
+					}
+
+					& > .qodef-field-desc {
+						    width: 20%;
+                            padding: 10px 20px 10px 0;
+                            display: table-cell;
+							height: 100%;
+							vertical-align: middle;
+					}
+
+					.qodef-section-content {
+						padding: 20px 0;
+						display: table-cell;
+                        width: 80%;
+						height: 100%;
+						vertical-align: middle;
+
+						.container-fluid {
+							padding-right: 0;
+						}
+					}
+				}
+			} //close table.qodef-page-form
+
+			.form-button-section {
+				margin-top: 20px;
+			}
+		}
+
+
+
+    } //.qodef-page-content-wrapper
+
+} //close .qodef-options-page
+
+

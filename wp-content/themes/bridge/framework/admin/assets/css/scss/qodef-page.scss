@@ -1,0 +1,8 @@
+.qodef-page {
+    a {
+        &:focus,
+        &:hover {
+            text-decoration: none;
+        }
+    }
+}

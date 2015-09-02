@@ -1,0 +1,12 @@
+.qodef-tooltip {
+    display: inline-block;
+    color: #a8a8a8;
+
+    &.qodef-inline-tooltip.left {
+        margin-right: 10px;
+    }
+
+    &.qodef-inline-tooltip.right {
+        margin-left: 10px;
+    }
+}

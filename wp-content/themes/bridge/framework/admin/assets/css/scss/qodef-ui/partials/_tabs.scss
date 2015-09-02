@@ -1,0 +1,115 @@
+/* ==========================================================================
+   Tabs styles
+   ========================================================================== */
+$qodef-tabs-background-color: #fcfcfc;
+
+.qodef-tabs-wrapper {
+
+    .nav-tabs {
+        margin-top: 0;
+
+        & > li {
+            &.active {
+                & > a {
+                    @include qodef-border-radius(0);
+                    border-left-color: transparent;
+
+                    &:hover,
+                    &:focus {
+                        @include qodef-border-radius(0);
+                    }
+                }
+            }
+
+            & a > i {
+                width: 25px;
+            }
+        }
+    } //close .nav-tabs
+
+    .qodef-tabs-content {
+        background-color: $qodef-tabs-background-color;
+        padding: 20px;
+    } //close .qodef-tabs-content
+
+    /* Vertical tabs
+   ========================================================================== */
+    &.vertical {
+        .nav-tabs {
+            border-bottom: 0;
+
+            & > li {
+                float: none;
+                width: 100%;
+
+                &.active {
+                    & a,
+                    & a:focus,
+                    & a:hover {
+                        border-bottom: 1px solid $qodef-border-color;
+                        margin-bottom: 0;
+                        background-color: $qodef-tabs-background-color;
+						border-left: none;
+                    }
+
+                } //close &.active
+
+                a {
+                    border-bottom: 1px solid $qodef-border-color;
+
+                    &:focus,
+                    &:hover {
+                        background-color: transparent;
+                        border-top: 1px solid $qodef-border-color;
+                    }
+                } //close a
+
+            } //close & > li
+
+        } //close .nav-tabs
+
+        .qodef-tabs-navigation-wrapper,
+        .qodef-tabs-content {
+            min-height: 300px;
+        }
+
+        .qodef-tabs-navigation-wrapper {
+            width: 200px;
+        }
+
+        .qodef-tabs-content {
+            margin-left: 198px;
+            border-left: 1px solid $qodef-border-color;
+        }
+
+        /* Vertical left tabs
+        ========================================================================== */
+        &.left {
+            .nav-tabs > li {
+                &:first-child > a {
+                    border-top: none;
+                }
+
+                & > a {
+                    border-right-color: $qodef-tabs-background-color;
+                    margin-right: 0;
+                }
+            }
+
+            .qodef-tabs-navigation-wrapper {
+                float: left;
+            }
+        } //close &.left
+
+        /* Vertical right tabs
+        ========================================================================== */
+        &.right {
+            .qodef-tabs-navigation-wrapper,
+            .qodef-tabs-wrapper.vertical.right .qodef-tabs-content {
+                float: right;
+            }
+        }
+
+    } //close &.vertical
+
+} //close .qodef-tabs-wrapper

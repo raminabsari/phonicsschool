@@ -1,0 +1,88 @@
+
+// Clearfix
+// --------
+// For clearing floats like a boss h5bp.com/q
+.clearfix {
+    *zoom: 1;
+    &:before,
+    &:after {
+        display: table;
+        content: "";
+    }
+    &:after {
+        clear: both;
+    }
+}
+
+
+.block {
+    display: block;
+}
+
+// Centre-align a block level element
+// ----------------------------------
+.centre-block() {
+    &:extend(.block);
+    margin-left: auto;
+    margin-right: auto;
+}
+
+// Text overflow
+// -------------------------
+// Requires inline-block or block for proper styling
+.text-overflow {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+// CSS image replacement
+// -------------------------
+// Source: https://github.com/h5bp/html5-boilerplate/commit/aa0396eae757
+.hide-text {
+    font: 0/0 a;
+    color: transparent;
+    text-shadow: none;
+    background-color: transparent;
+    border: 0;
+}
+
+.centered {
+    text-align: center;
+}
+
+
+/* Hide for both screenreaders and browsers:
+   css-discuss.incutio.com/wiki/Screenreader_Visibility */
+.hide {
+    display: none;
+}
+
+.checkmark-list() {
+    li {
+        list-style-type: none;
+        background-image: url('img/checkmark-50x50.png');
+        background-repeat: no-repeat;
+        background-position: 0 0;
+        background-size: 50px/2 50px/2;
+        margin-bottom: 0.75em; // 12px @ 1em
+        padding-left: 50px/2 + 10px;
+    }
+}
+
+
+.add-quotes-icon {
+    &:before {
+        content: '"';
+        display: block;
+        margin: 0 auto 0.75em;
+        width: 64px;
+        height: 48px;
+        overflow: hidden;
+        background-image: url('img/quotes-icon.png');
+        background-size: 64px/2 48px/2;
+        background-repeat: no-repeat;
+        background-position: center center;
+        text-indent: -9999px;
+    }
+}

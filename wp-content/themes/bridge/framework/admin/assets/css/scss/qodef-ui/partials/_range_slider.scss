@@ -1,0 +1,57 @@
+.qodef-page {
+
+    .qodef-slider-range-wrapper {
+
+        .qodef-slider-range {
+            margin-left: 130px;
+            position: relative;
+            top: 7px;
+
+            .noUi-base {
+                background-color: #428bca;
+            }
+
+            .noUi-origin {
+                background-color: #fff;
+            }
+
+            .noUi-handle {
+                width: 20px;
+                height: 23px;
+                top: -4px;
+
+                &:after,
+                &:before {
+                    display: none;
+                }
+            }
+
+            &.noUi-horizontal {
+                &.small {
+                    width: 200px;
+                }
+
+                &.medium {
+                    width: 350px;
+                }
+
+                &.large {
+                    width: 500%;
+                }
+            }
+
+            &.noUi-vertical {
+                height: 150px;
+
+                .noUi-handle {
+                    left: -2px;
+                }
+            }
+        } //close .qodef-slider-range
+
+        .qodef-field-description {
+            display: block;
+            margin-top: 26px;
+        }
+    } //close .qodef-slider-range-wrapper
+} //close .qodef-page

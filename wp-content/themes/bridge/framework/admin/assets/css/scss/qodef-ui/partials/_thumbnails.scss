@@ -1,0 +1,11 @@
+.thumbnail {
+    @include qodef-border-radius(0);
+    border: none;
+    padding: 0;
+}
+
+.qodef-page {
+    .img-thumbnail {
+        margin-bottom: 15px;
+    }
+}

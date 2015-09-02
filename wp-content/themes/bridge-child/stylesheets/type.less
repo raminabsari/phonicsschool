@@ -1,0 +1,221 @@
+/*------------------------------------------------------------------------------------------------------------------------
+    Author: Sean Goresht
+    www: http://seangoresht.com/
+    github: https://github.com/srsgores
+
+    twitter: http://twitter.com/S.Goresht
+
+    LESS Boilerplate
+    Licensed under the GNU Public License
+
+    =============================================================================
+    Filename:  type.less
+    =============================================================================
+    This file is responsible for all typography styles.
+--------------------------------------------------------------------------------------------------------------------- */
+
+@font-face {
+    font-family: 'linottesemibold';
+    src: url('fonts/Linotte-SemiBold-webfont.eot');
+    src: url('fonts/Linotte-SemiBold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/Linotte-SemiBold-webfont.woff2') format('woff2'),
+         url('fonts/Linotte-SemiBold-webfont.woff') format('woff'),
+         url('fonts/Linotte-SemiBold-webfont.ttf') format('truetype'),
+         url('fonts/Linotte-SemiBold-webfont.svg#linottesemibold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+p {
+    line-height: @baseLineHeight;
+    padding-bottom: 1em;
+    color: @textColor;
+}
+
+/* Type */
+
+
+.h1, .h2, .h3, .h4, .h5, .h6,
+h1, h2, h3, h4, h5, h6 {
+    font-weight: @headingsFontWeight;
+    color: @headingsColor;
+    letter-spacing: 0;
+    margin-bottom: 0.75em;
+}
+
+// Sizing inspired by: http://typecast.com/blog/a-more-modern-scale-for-web-typography
+.h6,
+h6 {
+    font-family: @baseFontFamily;
+    font-size: @fontSizeMedium; // 18px
+    line-height: 1.22222222em;
+}
+.h5,
+h5 {
+    font-family: @baseFontFamily;
+    font-size: @fontSizeBig; // 24px
+    line-height: 1.45833333em;
+}
+.h4,
+h4 {
+    font-family: @headingsFontFamily;
+    font-size: @fontSizeLarge; // 28px
+    line-height: 1.4em;
+    letter-spacing: -0.04em;
+}
+.h3,
+h3 {
+    font-family: @headingsFontFamily;
+    font-size: @fontSizeXL; // 36px
+    line-height: 1.25em;
+    letter-spacing: -0.04em;
+}
+.h2,
+h2 {
+    font-family: @headingsFontFamily;
+    font-size: @fontSizeXXL; // 48px
+    line-height: 1.05em;
+    letter-spacing: -0.04em;
+}
+.h1,
+h1 {
+    font-family: @headingsFontFamily;
+    font-size: @fontSizeXXXL; // 64px
+    line-height: 1.05em;
+    letter-spacing: -0.04em;
+}
+
+// .headingsX(@index) when (@index > 0) {
+//     h@{index} {
+//         font-size: ((@em * @multiplierLarge) - ((@index * ((@em * @multiplier) / 6 ))));
+//         &.title {
+//             font-size: (((@em * @multiplier) - ((@index * ((@em * @multiplierSmall) / 6 ))) + (@em * @multiplier)) * @multiplier);
+//         }
+//     }
+//     .headingsX(@index - 1);
+// }
+// .headingsX(0) {}
+// .headingsX(6);
+
+
+@media only screen and (max-width: 600px) {
+    h1,
+    .h1 {
+        font-size: @fontSizeXXL;
+    }
+}
+
+
+a {
+    color: @linkColor;
+    text-decoration: none;
+    &:hover {
+        color: @linkColorHover;
+    }
+    &:visited {
+        color: @linkColorVisited;
+    }
+}
+
+p a {
+    &:hover {
+        opacity: 0.8;
+    }
+    &:active {
+        opacity: 0.4;
+    }
+}
+
+
+.title.title_size_small h1,
+.title h1 {
+    .h2;
+    margin-bottom: 0;
+}
+
+.subtitle {
+    .h5;
+    color: @muted;
+}
+
+hr {
+    border-color: @bk1;
+    width: 25%;
+    margin: 5% auto;
+}
+
+
+.vc_row.row-image-overlay.light,
+.wpb_tabstabs_holder.ps-content-slider,
+section.parallax_section_holder.light {
+    h1, h2, h3, h4 {
+        color: @wt;
+        text-shadow: 0 1px 20px @bk8;
+    }
+    h5, h6, p {
+        color: @wt9;
+        text-shadow: 0 1px 10px @bk8;
+
+        strong {
+            color: @wt;
+        }
+    }
+
+    p a {
+        color: @wt;
+
+        &:hover {
+            opacity: 0.8;
+        }
+    }
+
+    blockquote {
+
+        h3 {
+            margin-bottom: 0.2em;
+        }
+
+        p {
+            font-size: @fontSizeSmall;
+            color: @wt7;
+            text-align: right;
+        }
+
+        .add-quotes-icon;
+        &:before {
+            position: absolute;
+            left: -2.5em;
+            top: -1em;
+        }
+    }
+}
+
+
+.watch-episode-link {
+    font-size: @fontSizeBig;
+    letter-spacing: -0.5px;
+    line-height: @buttonHeightMedium;
+    color: @linkColor;
+    display: inline-block;
+    vertical-align: top;
+    margin-bottom: 12px;
+
+    // TODO: Use image or font-icons instead
+    &:after {
+        @size: 43px;
+        content: "►";
+        margin-left: 0.7em;
+        display: inline-block;
+        text-align: center;
+        font-size: 17px;
+        line-height: @size - 2px;
+        text-indent: 4px;
+        vertical-align: top;
+        width: @size - 4px;
+        height: @size - 4px;
+        border-radius: 50%;
+        border: 2px solid @linkColor;
+    }
+}

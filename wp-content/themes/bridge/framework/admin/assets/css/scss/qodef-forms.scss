@@ -1,0 +1,123 @@
+@import "mixins";
+@import "variables";
+
+.qodef-page {
+    .qodef-field-description {
+        margin-top: 10px;
+        display: inline-block;
+    }
+}
+
+.qodef-page {
+    input.qodef-form-element,
+    select.qodef-form-element,
+    textarea.qodef-form-element {
+        @include qodef-box-shadow(none);
+        @include qodef-transition(border-color 0.3s ease-in-out);
+        border-color: #ddd;
+        font-size: 13px;
+        outline: none;
+
+        &:focus {
+            border-color: #ccc;
+            @include qodef-box-shadow(inset 0 0 1px #ddd);
+        }
+    }
+
+    input[type='text'].qodef-form-element,
+    input[type='email'].qodef-form-element,
+    input[type='password'].qodef-form-element,
+    input[type='number'].qodef-form-element,
+    select.qodef-form-element,
+    textarea.qodef-form-element {
+        @include qodef-border-radius(0);
+
+        &.qodef-form-element-xsmall {
+            width: 100px;
+        }
+
+        &.qodef-form-element-small {
+            width: 155px;
+        }
+
+        &.qodef-form-element-medium {
+            width: 255px;
+        }
+
+        &.qodef-form-element-large {
+            width: 500px;
+        }
+    }
+
+    textarea.qodef-form-element {
+        resize: none;
+    }
+
+    input[type='text'].qodef-form-element,
+    input[type='email'].qodef-form-element,
+    input[type='password'].qodef-form-element,
+    input[type='number'].qodef-form-element,
+    select.qodef-form-element {
+        height: 34px;
+        line-height: 1.42857143;
+    }
+
+    input[type='text'].qodef-form-element,
+    input[type='email'].qodef-form-element,
+    input[type='password'].qodef-form-element,
+    input[type='number'].qodef-form-element,
+    select.qodef-form-element,
+    textarea.qodef-form-element {
+        padding: 6px 12px;
+    }
+
+    input[type="radio"].qodef-form-element,
+    input[type="checkbox"].qodef-form-element {
+        margin-top: 1px;
+		outline: none;
+		
+		@media only screen and (max-width: $second-break-point) {
+			width: 16px;
+			height: 16px;
+		}
+
+		&:checked:before {
+			@media only screen and (max-width: $second-break-point) {
+				font: 400 21px/1 dashicons;
+			}
+		}
+    }
+
+	input[type="checkbox"].qodef-form-element {
+		&:checked:before {
+			@media only screen and (max-width: $second-break-point) {
+				margin: -3px 0 0 -4px;
+			}
+		}
+	}
+
+	input[type="radio"].qodef-form-element {
+		&:checked:before {
+			@media only screen and (max-width: $second-break-point) {
+				margin: 3px;
+			}
+		}
+	}
+
+
+    .input-group {
+        margin-bottom: 15px;
+
+        .input-group-addon {
+            @include qodef-border-radius(0);
+        }
+    }
+
+}
+
+#wpbody select.qodef-form-element {
+	@media only screen and (max-width: $second-break-point) {
+		font-size: 13px;
+		height: 34px;
+	}
+}
