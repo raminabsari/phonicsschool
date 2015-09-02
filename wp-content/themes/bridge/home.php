@@ -15,8 +15,7 @@ if(get_post_meta($id, "qode_page_background_color", true) != ""){
 	$background_color = "";
 }
 
-?>
-	
+?>	
 	<?php if(get_post_meta($id, "qode_page_scroll_amount_for_sticky", true)) { ?>
 		<script>
 		var page_scroll_amount_for_sticky = <?php echo get_post_meta($id, "qode_page_scroll_amount_for_sticky", true); ?>;

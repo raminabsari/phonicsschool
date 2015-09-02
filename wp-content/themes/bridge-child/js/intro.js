@@ -33,7 +33,7 @@ jQuery(document).ready(function($) {
             .on('change', function() {
                 select.closest('form')[0].submit();
             });
-    }
+    }   
 
     // here we store the window scroll position to lock; -1 means unlocked
     var forceWindowScrollY = -1;
@@ -77,8 +77,21 @@ jQuery(document).ready(function($) {
         }      
     }
     $('.woocommerce ul.woocommerce-error').show();
+    $(document).on('click', '#place_order', function(){
 
-    
+        setTimeout(function(){ $('.woocommerce ul.woocommerce-error').show(); }, 3000);
+    });
+
+    var mcc_checkout = $('#_mc4wp_subscribe_woocommerce_checkout_field');
+    var mcc_checkout_clone = mcc_checkout.clone();
+    //alert(mcc_checkout_clone.length);
+    if( mcc_checkout_clone.length > 0 ) {
+
+
+        mcc_checkout_clone.css('display','block').insertAfter($('div#payment'));
+        mcc_checkout.remove();
+        //$('#_mc4wp_subscribe_woocommerce_checkout_field').show();
+    }
 });
 
 // scroll to top code Starts here 

@@ -6,7 +6,7 @@ if ( !defined( 'ABSPATH' ) ) exit;
     Plugin Name: Child Theme Configurator
     Plugin URI: http://www.childthemeconfigurator.com
     Description: Create child themes and customize styles, templates and functions. Enqueues stylesheets and web fonts. Handles rgba, vendor-prefixes and more.
-    Version: 1.7.6
+    Version: 1.7.6.1
     Author: Lilaea Media
     Author URI: http://www.lilaeamedia.com
     Text Domain: chld_thm_cfg
@@ -22,7 +22,7 @@ if ( !defined( 'ABSPATH' ) ) exit;
     define( 'CHLD_THM_CFG_DOCS_URL',            "http://www.childthemeconfigurator.com" );
     defined( 'CHLD_THM_CFG_OPTIONS' ) or 
     define( 'CHLD_THM_CFG_OPTIONS',             'chld_thm_cfg_options' );
-    define( 'CHLD_THM_CFG_VERSION',             '1.7.6' );
+    define( 'CHLD_THM_CFG_VERSION',             '1.7.6.1' );
     define( 'CHLD_THM_CFG_MIN_WP_VERSION',      '3.7' );
     defined( 'CHLD_THM_CFG_BPSEL' ) or 
     define( 'CHLD_THM_CFG_BPSEL',               '2500' );

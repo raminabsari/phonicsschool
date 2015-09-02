@@ -5,7 +5,7 @@ if ( !defined( 'ABSPATH' ) ) exit;
 // jQuery selectmenu object for parent and child theme options
 ?>
 
-<div id="ctc_theme_option_<?php echo $slug; ?>" class="clearfix ctc-theme-option">
+<div id="ctc_theme_option_<?php echo $this->ctc()->sanitize_slug( $slug ); ?>" class="clearfix ctc-theme-option">
   <div class="ctc-theme-option-left"><img src="<?php echo $theme[ 'screenshot' ]; ?>" class="ctc-theme-option-image"/></div>
   <div class="ctc-theme-option-right">
     <h3 class="theme-name"><?php echo $theme[ 'Name' ]; ?></h3>

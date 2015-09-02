@@ -29,6 +29,117 @@
 
 <body <?php body_class(); ?>>
 
+	<!-- Abdul Majid Khan -->
+<style type="text/css">
+#minicart-checkout .continue-to-checkout {
+    background: #42d268 none repeat scroll 0 0 !important;
+    border-radius: 5px !important;
+    color: #fff !important;
+    display: inline-block !important;
+    margin-bottom: 9px !important;
+    margin-top: 10px !important;
+    padding: 2px 10px !important;
+    text-align: center !important;
+	 margin-left: 17px; 
+}
+#minicart-close > a {
+    color: #333;
+    font-size: 12px;
+    text-transform: uppercase;
+}
+
+#minicart-close {
+    text-align: center;
+}
+
+#form-row .input-checkbox{float: left !important;}
+
+#minicart-summary > div { 
+    color: black;
+    float: left;
+    font-size: 12px; margin-right: 18px;
+    color: #000; 
+}  
+</style>	
+<div id="minicart-inner">
+	<div id="minicart-header">ADDED TO SHOPPING CART</div>
+	<div id="minicart-content">
+		<div id="minicart" class="show-1">
+			<div class="minicart-prod">
+				<div class="minicart-prod-img">
+					<a class="prod_image_link" href="">
+						<img id="prod_image" src="">
+					</a>
+				</div>
+				
+				<div class="minicart-prod-details">
+					<div class="minicart-prod-title">
+						<a id="product_title" class="prod_image_link" href=""></a>
+					</div>
+					<div id="product_price" class="minicart-prod-price"></div>
+					<div id="item_quantity" class="minicart-prod-description"></div>
+				</div>
+			</div>
+		</div>										
+		
+		<div id="minicart-summary">
+			<div id="minicart-item-total">
+				SHOPPING CART<br>
+				<span id="prod_items_count"></span>
+			</div>
+			<div id="minicart-subtotal-price">
+				SUBTOTAL<br>
+				<span id="prod_items_subtotal"></span>
+			</div>
+		</div>																														<div id="minicart-checkout">
+			<a id="continue-to-checkout" class="continue-to-checkout" href="">Continue To Checkout</a>
+		</div>
+	</div>
+	<div class="clear"></div>
+	<!-- /minicart-content -->
+	<div id="minicart-close">
+		<a href="javascript:void(0);">▲ Close</a>
+	</div>
+</div>
+<script type="text/javascript">
+	if( "undefined" == typeof window.jQuery ) {
+
+		throw new Error("This code required jQuery");
+	}
+	jQuery(document).ready(function(){
+
+		jQuery('#minicart-close a').click(function(){
+
+			hideCartFlash();
+		});
+
+		if( typeof cart_json !== "undefined" && cart_json !== 0 && cart_json !== "undefined" ) {
+
+			jQuery('#prod_image').replaceWith(cart_json.product_image);
+			jQuery('#product_title').text(cart_json.product_title);
+			jQuery('#product_price').text("Price: $"+cart_json.price);			
+			jQuery('#item_quantity').text("Quantity: "+cart_json.quantity);			
+			jQuery('#prod_items_count').text(cart_json.total_quantity+" items");
+			jQuery('#prod_items_subtotal').text("$"+cart_json.subtotal);			
+			jQuery('.prod_image_link').attr('src', cart_json.product_link);			
+			jQuery('#continue-to-checkout').attr('href', cart_json.cart_url);			
+			showCartFlash();
+			setTimeout(function(){ hideCartFlash(); }, 10000);
+		}
+		else{
+
+			hideCartFlash();
+		}
+	});
+	function hideCartFlash() {
+	  jQuery("#minicart-inner").css("visibility", "hidden");
+	}
+
+	function showCartFlash() {
+	  jQuery("#minicart-inner").css("visibility", "visible");
+	}	
+</script>
+	<!-- Abdul Majid Khan -->
 	<?php
 		$loading_animation = true;
 		if (isset($qode_options_proya['loading_animation'])){ if($qode_options_proya['loading_animation'] == "off") { $loading_animation = false; }};

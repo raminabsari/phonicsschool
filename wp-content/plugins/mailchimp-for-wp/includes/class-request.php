@@ -70,7 +70,7 @@ abstract class MC4WP_Request implements iMC4WP_Request {
 		$config = array();
 
 		foreach( $data as $key => $value ) {
-			if( strpos( $key, '_mc4wp_' ) === 0 ) {
+			if( stripos( $key, '_mc4wp_' ) === 0 ) {
 
 				// remove data from array
 				unset( $data[$key] );
@@ -203,7 +203,7 @@ abstract class MC4WP_Request implements iMC4WP_Request {
 			'{form_element}' => $this->form_element_id,
 			'{email}' => urlencode( $this->user_data['EMAIL'] )
 		);
-		$url = MC4WP_Tools::replace_variables( $this->form->settings['redirect'], $additional_replacements );
+		$url = MC4WP_Tools::replace_variables( $this->form->settings['redirect'], $additional_replacements, null, 'url' );
 		return $url;
 	}
 
@@ -227,7 +227,7 @@ abstract class MC4WP_Request implements iMC4WP_Request {
 			do_action( 'mc4wp_form_success', 0, $this->user_data['EMAIL'], $this->user_data );
 
 			// check if we want to redirect the visitor
-			if ( '' !== $this->form->settings['redirect'] ) {
+			if ( ! empty( $this->form->settings['redirect'] ) ) {
 				wp_redirect( $this->get_redirect_url() );
 				exit;
 			}

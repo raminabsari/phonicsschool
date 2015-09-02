@@ -8,20 +8,13 @@ echo "</pre>";*/
 add_action('wp_head', 'your_function');
 function your_function(){
 
-if( isset($_SERVER['REQUEST_URI']) && $_SERVER['REQUEST_URI'] == '/new-phonicsschool/checkout/' ) {
+    if( isset($_SERVER['REQUEST_URI']) && $_SERVER['REQUEST_URI'] == '/new-phonicsschool/checkout/' ) {
 
-    //echo "Thanks";
-    echo "<style>";
-    echo ".woocommerce ul.woocommerce-error {display: block !important;}";
-    echo "</style>";
-}   
-}
-if( isset($_SERVER['REQUEST_URI']) && $_SERVER['REQUEST_URI'] == '/new-phonicsschool/checkout/' ) {
-
-    //echo "Thanks";
-    /*echo "<style>";
-    echo ".woocommerce ul.woocommerce-error {display: none !important;}";
-    echo "</style>";*/
+        //echo "Thanks";
+        echo "<style>";
+        echo ".woocommerce ul.woocommerce-error {display: block !important;}";
+        echo "</style>";
+    }   
 }
 
 // enqueue the child theme stylesheet
@@ -83,14 +76,45 @@ add_filter('body_class', 'add_shop_body_class');
 add_filter( 'woocommerce_billing_fields', 'wc_npr_filter_phone', 10, 1 );
 function wc_npr_filter_phone( $address_fields ) {
 $address_fields['billing_phone']['required'] = false;
+$address_fields['billing_phone']['placeholder'] = 'Enter Phone (optional)';
+
 return $address_fields;
 }
 
-/*function custom_add_to_cart_message() {
+function custom_add_to_cart_message( $message ) {
 
-    global $woocommerce;
-    echo "<pre>";
-    print_r($woocommerce);
-    echo "</pre>";
+    function cart_json(){
+        global $woocommerce;
+        global $json;
+
+        $cart_items = $woocommerce->cart->cart_contents;
+        $latest_added_item = end($cart_items);
+        $p_id = $latest_added_item['data']->post->ID;
+        $product = wc_get_product( $p_id );
+        $product_image = $product->get_image();
+        $product_link = get_permalink($p_id);
+        $details = array();
+        $json = 0;
+
+        if( isset($latest_added_item['quantity']) && !empty($latest_added_item['quantity']) && $latest_added_item['quantity'] != 0 ){
+
+            $details['product_link'] = $product_link; 
+            $details['product_image'] = $product_image; 
+            $details['quantity'] = $latest_added_item['quantity']; 
+            $details['price'] = $latest_added_item['data']->price; 
+            $details['product_title'] = $latest_added_item['data']->post->post_title; 
+            $details['total_quantity'] = $woocommerce->cart->cart_contents_count; 
+            $details['subtotal'] = $woocommerce->cart->subtotal;   
+            $details['cart_url'] = $woocommerce->cart->get_checkout_url();  
+            $json = json_encode($details);     
+        }else{
+            $json = 0;       
+        }        
+            echo "<script>";
+            echo "var cart_json = " . $json.";";
+            echo "</script>";    
+    }
+    add_action('wp_head', 'cart_json');
+    return $message;
 }
-add_filter( 'wc_add_to_cart_message', 'custom_add_to_cart_message' );*/
+add_filter( 'wc_add_to_cart_message', 'custom_add_to_cart_message' );

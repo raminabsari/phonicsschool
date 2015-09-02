@@ -1,0 +1,234 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: YITH WooCommerce Added to Cart Popup\n"
+"POT-Creation-Date: 2015-08-13 16:07+0200\n"
+"PO-Revision-Date: 2015-06-23 09:32+0100\n"
+"Last-Translator: \n"
+"Language-Team: YIThemes <plugins@yithemes.com>\n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.8.2\n"
+"X-Poedit-Basepath: .\n"
+"Plural-Forms: nplurals=2; plural=n!=1;\n"
+"X-Poedit-KeywordsList: __ ;_e;_n:1,2;__ngettext:1,2;__ngettext_noop:1,2;"
+"_n_noop:1,2;_c,_nc:4c,1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-SearchPath-0: ..\n"
+"X-Poedit-SearchPathExcluded-0: ../plugin-fw\n"
+
+#: ../includes/class.yith-wacp-admin.php:122
+#: ../includes/class.yith-wacp-admin.php:146
+msgid "Settings"
+msgstr ""
+
+#: ../includes/class.yith-wacp-admin.php:124
+#: ../includes/class.yith-wacp-admin.php:150
+msgid "Premium Version"
+msgstr ""
+
+#: ../includes/class.yith-wacp-admin.php:156
+#: ../includes/class.yith-wacp-admin.php:157
+msgid "Added to Cart Popup"
+msgstr ""
+
+#: ../includes/class.yith-wacp-admin.php:210
+msgid "Plugin Documentation"
+msgstr ""
+
+#: ../includes/class.yith-wacp-frontend.php:136
+msgid "was added to your cart"
+msgstr ""
+
+#: ../includes/class.yith-wacp-frontend.php:141
+msgid "Added to your cart"
+msgstr ""
+
+#: ../includes/class.yith-wacp-frontend.php:147
+msgid "View cart"
+msgstr ""
+
+#: ../includes/class.yith-wacp-frontend.php:150
+msgid "Continue shopping"
+msgstr ""
+
+#: ../init.php:41
+msgid ""
+"YITH WooCommerce Added to Cart Popup is enabled but not effective. It "
+"requires WooCommerce in order to work."
+msgstr ""
+
+#: ../init.php:50
+msgid ""
+"You can't activate the free version of YITH WooCommerce Added to Cart "
+"Popup while you are using the premium one."
+msgstr ""
+
+#: ../plugin-options/general-options.php:11
+msgid "General Options"
+msgstr ""
+
+#: ../plugin-options/general-options.php:18
+msgid "Show \"View Cart\" Button"
+msgstr ""
+
+#: ../plugin-options/general-options.php:19
+msgid "Choose to show \"View Cart\" button in the popup"
+msgstr ""
+
+#: ../plugin-options/general-options.php:26
+msgid "Show \"Continue Shopping\" Button"
+msgstr ""
+
+#: ../plugin-options/general-options.php:27
+msgid "Choose to show \"Continue Shopping\" button in the popup"
+msgstr ""
+
+#: ../plugin-options/general-options.php:34
+msgid "Button Background"
+msgstr ""
+
+#: ../plugin-options/general-options.php:35
+msgid "Select the button background color"
+msgstr ""
+
+#: ../plugin-options/general-options.php:42
+msgid "Button Background on Hover"
+msgstr ""
+
+#: ../plugin-options/general-options.php:43
+msgid "Select the button background color on mouse hover"
+msgstr ""
+
+#: ../plugin-options/general-options.php:50
+msgid "Button Text"
+msgstr ""
+
+#: ../plugin-options/general-options.php:51
+msgid "Select the color of the text of the button"
+msgstr ""
+
+#: ../plugin-options/general-options.php:58
+msgid "Button Text on Hover"
+msgstr ""
+
+#: ../plugin-options/general-options.php:59
+msgid "Select the color of the text of the button on mouse hover"
+msgstr ""
+
+#: ../templates/admin/premium.php:226 ../templates/admin/premium.php:352
+#, php-format
+msgid ""
+"Upgrade to %1$spremium version%2$s of %1$sYITH WooCommerce Added to Cart "
+"Popup%2$s to benefit from all features!"
+msgstr ""
+
+#: ../templates/admin/premium.php:229 ../templates/admin/premium.php:355
+msgid "UPGRADE"
+msgstr ""
+
+#: ../templates/admin/premium.php:230 ../templates/admin/premium.php:356
+msgid "to the premium version"
+msgstr ""
+
+#: ../templates/admin/premium.php:236
+msgid "Premium Features"
+msgstr ""
+
+#: ../templates/admin/premium.php:244
+msgid "Shop or detail page?"
+msgstr ""
+
+#: ../templates/admin/premium.php:247
+#, php-format
+msgid ""
+"Pick your choice and %1$sshow the popup%2$s just to users that add the "
+"product in the cart from the Shop page, or also to those who make the same "
+"action from the product detail page."
+msgstr ""
+
+#: ../templates/admin/premium.php:257
+msgid "Popup content"
+msgstr ""
+
+#: ../templates/admin/premium.php:260
+#, php-format
+msgid ""
+"What will you choose? %1$sThe list of the elements of the cart, or the "
+"information about the last product added?%2$s It's up to you: choose what "
+"to show in the popup that will be opened once clicked on the \"Add to cart"
+"\" button.%3$sThe advanced option panel will let you choose whether to "
+"show or hide the images of all the products added in the popup."
+msgstr ""
+
+#: ../templates/admin/premium.php:276
+msgid "8 entrance animations"
+msgstr ""
+
+#: ../templates/admin/premium.php:279
+#, php-format
+msgid ""
+"Eight different styles for the opening of the popup in the pages of your "
+"shop.%3$sFrom the classic \"Fade\" effect, to the more dynamic \"3D Flip"
+"\": with %1$sYITH WooCommerce Added To Cart Popup%2$s you will satisfy "
+"also the most demanding users."
+msgstr ""
+
+#: ../templates/admin/premium.php:289
+msgid "Popup style"
+msgstr ""
+
+#: ../templates/admin/premium.php:292
+#, php-format
+msgid ""
+"The default color scheme of the popup can be totally different from the "
+"one of the pages in which it will be showed: but do not be afraid, you "
+"will not have to change manually the CSS code to have the perfect style."
+"%3$sThanks to the %1$sadvanced option panel%2$s, you will be able to "
+"change the colors of all elements contained in the popup, in order to get "
+"to the result you want with few clicks."
+msgstr ""
+
+#: ../templates/admin/premium.php:308
+msgid "Related Products"
+msgstr ""
+
+#: ../templates/admin/premium.php:311
+#, php-format
+msgid ""
+"%1$sA strategic and smart way to highlight%2$s a selection of products in "
+"the end of the popup. In this way, you will be able to encourage your "
+"users to know more about the products they could have not discovered "
+"otherwise.%3$sIf you don't want to highlight particular products, this "
+"section could also be reserved to %1$sWooCommerce%2$s standard related "
+"products."
+msgstr ""
+
+#: ../templates/admin/premium.php:321
+msgid "Mobile devices"
+msgstr ""
+
+#: ../templates/admin/premium.php:324
+#, php-format
+msgid ""
+"Nowadays, the majority of the users that surf the web uses mobile devices. "
+"Be prepared and make your site compatible to every device.%3$sThe premium "
+"version of the plugin is %1$sperfectly accessible to every resolution%2$s, "
+"and it can be the winning weapon of your shop for all the smartphone and "
+"tablet lovers."
+msgstr ""
+
+#: ../templates/admin/premium.php:340
+msgid "Product exclusion"
+msgstr ""
+
+#: ../templates/admin/premium.php:343
+#, php-format
+msgid ""
+"Restrict the features of the plugin only to %1$sspecific products%2$s of "
+"the shop.%3$sSelect those on which you want to show the popup to your "
+"users, or choose the categories of the products you want to exclude from "
+"the plugin behavior."
+msgstr ""

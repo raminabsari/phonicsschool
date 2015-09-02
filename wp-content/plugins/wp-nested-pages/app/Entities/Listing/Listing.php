@@ -1,4 +1,6 @@
-<?php namespace NestedPages\Entities\Listing;
+<?php 
+
+namespace NestedPages\Entities\Listing;
 
 use NestedPages\Helpers;
 use NestedPages\Entities\Confirmation\ConfirmationFactory;
@@ -13,7 +15,8 @@ use NestedPages\Entities\PluginIntegration\IntegrationFactory;
 /**
 * Primary Post Listing
 */
-class Listing {
+class Listing 
+{
 
 	/**
 	* Post Type
@@ -99,18 +102,17 @@ class Listing {
 		$this->settings = new SettingsRepository;
 	}
 
-
 	/**
 	* Called by Menu Class
 	* Instantiates Listing Class
 	* @since 1.2.0
 	*/
-	public static function admin_menu($post_type) {
+	public static function admin_menu($post_type)
+	{
 		$class_name = get_class();
 		$classinstance = new $class_name($post_type);
 		return array(&$classinstance, "listPosts");
 	}
-
 
 	/**
 	* Set the Sort Options
@@ -129,7 +131,6 @@ class Listing {
 			: null;
 	}
 
-
 	/**
 	* Get the Current Page URL
 	*/
@@ -139,7 +140,6 @@ class Listing {
 		return $base . '?page=' . $_GET['page'];
 	}
 
-
 	/**
 	* Set the Post Type
 	* @since 1.1.16
@@ -148,7 +148,6 @@ class Listing {
 	{
 		$this->post_type = get_post_type_object($post_type);
 	}
-
 
 	/**
 	* The Main View
@@ -160,7 +159,6 @@ class Listing {
 		include( Helpers::view('listing') );
 	}
 
-
 	/**
 	* Set the Taxonomies for Post Type
 	*/
@@ -169,7 +167,6 @@ class Listing {
 		$this->h_taxonomies = $this->post_type_repo->getTaxonomies($this->post_type->name, true);
 		$this->f_taxonomies = $this->post_type_repo->getTaxonomies($this->post_type->name, false);
 	}
-
 
 	/**
 	* Opening list tag <ol>
@@ -206,7 +203,6 @@ class Listing {
 		 
 	}
 
-
 	/**
 	* Set Post Data
 	* @param object post object
@@ -215,7 +211,6 @@ class Listing {
 	{
 		$this->post = $this->post_data_factory->build($post);
 	}
-
 
 	/**
 	* Get count of published posts
@@ -231,7 +226,6 @@ class Listing {
 		return $publish_count;
 	}
 
-
 	/**
 	* Is this a search
 	* @return boolean
@@ -241,6 +235,13 @@ class Listing {
 		return ( isset($_GET['search']) && $_GET['search'] !== "" ) ? true : false;
 	}
 
+	/**
+	* Is the list filtered?
+	*/ 
+	private function isFiltered()
+	{
+		return ( isset($_GET['category']) && $_GET['category'] !== "all" ) ? true : false;
+	}
 
 	/**
 	* Loop through all the pages and create the nested / sortable list
@@ -249,7 +250,14 @@ class Listing {
 	private function loopPosts($parent_id = 0, $count = 0)
 	{
 		$this->setTaxonomies();
-		$post_type = ( $this->post_type->name == 'page' ) ? array('page', 'np-redirect') : array($this->post_type->name);
+		
+		if ( $this->post_type->name == 'page' ) {
+			$post_type = array('page');
+			if ( !$this->settings->menusDisabled() ) $post_type[] = 'np-redirect';
+		} else {
+			$post_type = array($this->post_type->name);
+		}
+		
 		$query_args = array(
 			'post_type' => $post_type,
 			'posts_per_page' => -1,
@@ -261,6 +269,7 @@ class Listing {
 		);
 		
 		if ( $this->isSearch() ) $query_args = $this->searchParams($query_args);
+		if ( $this->isFiltered() ) $query_args = $this->filterParams($query_args);
 
 		$pages = new \WP_Query(apply_filters('nestedpages_page_listing', $query_args));
 		
@@ -282,6 +291,7 @@ class Listing {
 
 					// Published?
 					if ( $this->post->status == 'publish' ) echo ' published';
+					if ( $this->post->status == 'draft' ) echo ' draft';
 					
 					// Hidden in Nested Pages?
 					if ( $this->post->np_status == 'hide' ) echo ' np-hide';
@@ -314,7 +324,6 @@ class Listing {
 		endif; wp_reset_postdata();
 	}
 
-
 	/**
 	* Search Posts
 	*/
@@ -325,6 +334,15 @@ class Listing {
 		return $query_args;
 	}
 
+	/**
+	* Filter Posts
+	*/
+	private function filterParams($query_args)
+	{
+		if ( !isset($_GET['category']) ) return $query_args;
+		$query_args['cat'] = sanitize_text_field($_GET['category']);
+		return $query_args;
+	}
 
 	/**
 	* Parent Trash Status
@@ -338,6 +356,5 @@ class Listing {
 		return false;
 
 	}
-
 
 }

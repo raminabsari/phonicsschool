@@ -5,7 +5,7 @@ if ( !defined( 'ABSPATH' ) ) exit;
     Class: Child_Theme_Configurator_UI
     Plugin URI: http://www.childthemeconfigurator.com/
     Description: Handles the plugin User Interface
-    Version: 1.7.6
+    Version: 1.7.6.1
     Author: Lilaea Media
     Author URI: http://www.lilaeamedia.com/
     Text Domain: chld_thm_cfg

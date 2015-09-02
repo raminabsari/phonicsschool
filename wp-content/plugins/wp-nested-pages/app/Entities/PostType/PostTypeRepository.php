@@ -1,7 +1,9 @@
-<?php namespace NestedPages\Entities\PostType;
+<?php 
 
-class PostTypeRepository {
+namespace NestedPages\Entities\PostType;
 
+class PostTypeRepository 
+{
 
 	/**
 	* Get Available Post Types
@@ -12,7 +14,6 @@ class PostTypeRepository {
 	{
 		return get_post_types(array('show_ui'=>true), $return);
 	}
-
 
 	/**
 	* Get an object of non-page post types
@@ -38,7 +39,6 @@ class PostTypeRepository {
 		return $post_types;
 	}
 
-
 	/**
 	* Is the specified post type set to override the default menu?
 	* @param string post type name
@@ -54,7 +54,6 @@ class PostTypeRepository {
 			}
 		}
 	}
-
 
 	/**
 	* Is the specified post type set to hide the default link?
@@ -88,7 +87,6 @@ class PostTypeRepository {
 		}
 	}
 
-
 	/**
 	* Get an array of NP enabled Post Types
 	* @since 1.2.1
@@ -99,7 +97,6 @@ class PostTypeRepository {
 		$types = get_option('nestedpages_posttypes');
 		return ( !$types ) ? array() : $types;
 	}
-
 
 	/**
 	* Add New Post Link
@@ -112,7 +109,6 @@ class PostTypeRepository {
 		return esc_url( admin_url('post-new.php?post_type=' . $post_type) );
 	}
 
-
 	/**
 	* Trash Link
 	* @since 1.2.1
@@ -124,7 +120,6 @@ class PostTypeRepository {
 		return esc_url( admin_url('edit.php?post_status=trash&post_type=' . $post_type) );
 	}
 
-
 	/**
 	* Edit Post Link
 	* @since 1.2.1
@@ -135,7 +130,6 @@ class PostTypeRepository {
 	{
 		return ( $post_type->name == 'post' ) ? 'edit.php' : 'edit.php?post_type=' . $post_type->name;
 	}
-
 
 	/**
 	* Get Taxonomies enabled for post type
@@ -161,6 +155,20 @@ class PostTypeRepository {
 		return ($hierarchical) ? $hierarchical_taxonomies : $flat_taxonomies;
 	}
 
+	/**
+	* Are Categories Enabled for a post type?
+	* @since 1.5.0
+	* @return boolean
+	*/
+	public function categoriesEnabled($post_type)
+	{
+		$taxonomies = $this->getTaxonomies($post_type, true);
+		$enabled = false;
+		foreach($taxonomies as $taxonomy){
+			if ( $taxonomy->name == 'category' ) $enabled = true;
+		}
+		return $enabled;
+	}
 
 	/**
 	* Get the NP menu slug for a post type
@@ -171,7 +179,6 @@ class PostTypeRepository {
 		return ( $post_type->name == 'page' ) ? 'nestedpages' : 'nestedpages-' . $post_type->name;
 	}
 
-
 	/**
 	* Set the Submenu Text
 	* "Nested View" for Hierarchical Post Types
@@ -181,6 +188,5 @@ class PostTypeRepository {
 	{
 		return ( $post_type->hierarchical ) ? __('Nested View', 'nestedpages') : __('Sort View', 'nestedpages');
 	}
-
 
 }

@@ -12,7 +12,7 @@
 		</a>
 		<?php endif; ?>
 		
-		<?php if ( current_user_can('publish_pages') && $this->post_type->name == 'page' && !$this->isSearch() ) : ?>
+		<?php if ( current_user_can('publish_pages') && $this->post_type->name == 'page' && !$this->isSearch() && !$this->settings->menusDisabled() ) : ?>
 		<a href="#" class="add-new-h2 open-redirect-modal" title="<?php _e('Add Link', 'nestedpages'); ?>" data-parentid="0">
 			<?php _e('Add Link', 'nestedpages'); ?>
 		</a>
@@ -21,7 +21,7 @@
 	</h2>
 
 	<?php if ( $this->confirmation->getMessage() ) : ?>
-		<div id="message" class="updated"><p><?php echo $this->confirmation->getMessage(); ?></p></div>
+		<div id="message" class="updated notice is-dismissible"><p><?php echo $this->confirmation->getMessage(); ?></p><button type="button" class="notice-dismiss"><span class="screen-reader-text">Dismiss this notice.</span></button></div>
 	<?php endif; ?>
 
 	<div class="nestedpages-top-toggles">
@@ -29,7 +29,7 @@
 		<a href="#" class="np-btn nestedpages-toggleall" data-toggle="closed"><?php _e('Expand All', 'nestedpages'); ?></a>
 		<?php endif; ?>
 
-		<?php if ( $this->user->canSortPages() && $this->post_type->name == 'page' && !$this->isSearch() && !$this->settings->hideMenuSync() ) : ?>
+		<?php if ( $this->user->canSortPages() && $this->post_type->name == 'page' && !$this->isSearch() && !$this->settings->hideMenuSync() && !$this->isFiltered() && !$this->settings->menusDisabled() ) : ?>
 		<div class="np-sync-menu-cont" <?php if ( $this->confirmation->getMessage() ) echo 'style="margin-top:2px;"';?>>
 			<label>
 				<input type="checkbox" name="np_sync_menu" class="np-sync-menu" value="sync" <?php if ( get_option('nestedpages_menusync') == 'sync' ) echo 'checked'; ?>/> <?php _e('Sync Menu', 'nestedpages'); ?>
@@ -66,5 +66,6 @@
 </div><!-- .wrap -->
 
 <?php include( NestedPages\Helpers::view('forms/empty-trash-modal') ); ?>
+<?php include( NestedPages\Helpers::view('forms/clone-form') ); ?>
 <?php include( NestedPages\Helpers::view('forms/link-form') ); ?>
 <?php include( NestedPages\Helpers::view('forms/bulk-add') ); ?>

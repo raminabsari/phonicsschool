@@ -152,6 +152,11 @@ hr {
   width: 25%;
   margin: 5% auto;
 }
+.woocommerce form.checkout table.shop_table th, .woocommerce form.checkout table.shop_table td {
+    padding: 10px;
+    text-align: left !important;
+}
+
 .vc_row.row-image-overlay.light h1,
 .wpb_tabstabs_holder.ps-content-slider h1,
 section.parallax_section_holder.light h1,
@@ -2989,8 +2994,4 @@ div#minicart-summary {
     margin-top: 12px;
     line-height: 25px;
 }
-
-
-
-
 

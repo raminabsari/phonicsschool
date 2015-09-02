@@ -1,0 +1,106 @@
+/**
+YITH WooCommerce Added to Cart Popup
+**/
+
+#yith-wacp-popup {
+    position: fixed;
+    visibility: hidden;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 10000;
+    opacity: 0;
+    text-align: center;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    transition: all 0.3s;
+}
+
+#yith-wacp-popup:before {
+    content: '';
+    display: inline-block;
+    vertical-align: middle;
+    height: 100%;
+    width: 0;
+}
+
+#yith-wacp-popup .yith-wacp-overlay {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba( 0, 0, 0, 0.8);
+}
+
+#yith-wacp-popup .yith-wacp-wrapper {
+    display: inline-block;
+    vertical-align: middle;
+    z-index: 2000;
+    visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    backface-visibility: hidden;
+    text-align: left;
+}
+
+#yith-wacp-popup .yith-wacp-main {
+    opacity: 0;
+    background-color: #fff;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    transition: all 0.3s;
+    -webkit-box-shadow: 0 0 0 10px rgba(255, 255, 255, 0.2);
+    box-shadow: 0 0 0 10px rgba(255, 255, 255, 0.2);
+}
+
+#yith-wacp-popup.open,
+#yith-wacp-popup.open .yith-wacp-wrapper {
+    visibility: visible;
+    opacity: 1;
+}
+
+#yith-wacp-popup.open .yith-wacp-main {
+    opacity: 1;
+}
+#yith-wacp-popup .yith-wacp-main {
+    -webkit-transform: scale(0.7);
+    -moz-transform: scale(0.7);
+    -ms-transform: scale(0.7);
+    transform: scale(0.7);
+}
+#yith-wacp-popup.open .yith-wacp-main {
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+}
+
+#yith-wacp-popup .yith-wacp-close {
+    border: 1px solid;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    line-height: 18px;
+    z-index: 2;
+    opacity: 0.5;
+}
+
+#yith-wacp-popup .yith-wacp-close:hover {
+    opacity: 1;
+    transition: all 0.2s ease;
+    -webkit-transition: all 0.2s ease;
+    -moz-transition: all 0.2s ease;
+    -ms-transition: all 0.2s ease;
+}
+#yith-wacp-popup .yith-wacp-content {
+    padding: 25px;
+    text-align: center;
+}
+#yith-wacp-popup .yith-wacp-content .product-info p {
+    margin-bottom: 15px;
+}

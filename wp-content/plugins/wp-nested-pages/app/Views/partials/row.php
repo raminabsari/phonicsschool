@@ -17,7 +17,13 @@
 		<?php endif; ?>
 
 		<a href="<?php echo get_edit_post_link(); ?>" class="page-link page-title">
-			<span class="title"><?php echo $this->post->title; ?></span>
+			<span class="title">
+				<?php 
+					echo $this->post->title; 
+					if ( $this->post->id == get_option('page_on_front') ) echo ' <em class="np-page-type"><strong>&ndash; ' . __('Front Page', 'nestedpages') . '</strong></em>';
+					if ( $this->post->id == get_option('page_for_posts') ) echo ' <em class="np-page-type"><strong>&ndash; ' . __('Posts Page', 'nestedpages') . '</strong></em>';
+				?>
+			</span>
 			<?php 
 				
 				if ( function_exists('wpseo_auto_load') ){
@@ -81,12 +87,16 @@
 			<?php else : $cs = 'closed'; endif; ?>
 
 
-			<?php if ( current_user_can('publish_pages') && $this->post_type->hierarchical && !$this->isSearch() ) : ?>
+			<?php if ( current_user_can('publish_pages') && $this->post_type->hierarchical && !$this->isSearch() && !$this->settings->menusDisabled() ) : ?>
 		
 			<a href="#" class="np-btn open-redirect-modal" data-parentid="<?php echo $this->post->id; ?>"><i class="np-icon-link"></i></a>
 			
 			<a href="#" class="np-btn add-new-child" data-id="<?php echo get_the_id(); ?>" data-parentname="<?php echo $this->post->title; ?>"><?php _e('Add Child', 'nestedpages'); ?></a>
 
+			<?php endif; ?>
+
+			<?php if ( current_user_can('edit_pages') && current_user_can('edit_posts') ) : ?>
+			<a href="#" class="np-btn clone-post" data-id="<?php echo get_the_id(); ?>" data-parentname="<?php echo $this->post->title; ?>"><?php _e('Clone', 'nestedpages'); ?></a>
 			<?php endif; ?>
 
 			<?php if ( !$user = wp_check_post_lock($this->post->id) || !$this->integrations->plugins->editorial_access_manager->hasAccess($this->post->id) ) : ?>
