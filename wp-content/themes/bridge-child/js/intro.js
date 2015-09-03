@@ -32,8 +32,24 @@ jQuery(document).ready(function($) {
         select.select2()
             .on('change', function() {
                 select.closest('form')[0].submit();
+                //alert(select.val());
             });
-    }   
+    }
+
+    //jQuery("div.column_inner div.footer_bottom form").hide();
+    if( checkOutURL != "undefined" || typeof checkOutURL != "undefined" ) {
+
+        var continueToCheckout = '<div id="minicart-checkout"><a href="'+checkOutURL+'" class="continue-to-checkout large-button" id="continue-to-checkout">Continue To Checkout</a>';
+        jQuery(".shopping_cart_dropdown").append(continueToCheckout);
+    }
+
+/*    var a = jQuery('select[name="billing_country"]');
+    var b = jQuery('select[name="wcpbc-manual-country"]');
+    //alert("billing: "+a.val());
+    a.select2().on('change', function(){
+        alert(a.val());
+        b.val(a.val());
+    });*/
 
     // here we store the window scroll position to lock; -1 means unlocked
     var forceWindowScrollY = -1;

@@ -47,7 +47,12 @@ $get_checkout_url = apply_filters( 'woocommerce_get_checkout_url', WC()->cart->g
 			</div>
 		</div>
 
-		<?php do_action( 'woocommerce_checkout_shipping' ); ?>
+		<div class="col2-set" id="shipping_details_bottom">
+			<div class="col-1">
+				<?php do_action( 'woocommerce_checkout_shipping' ); ?>
+			</div>
+			<div class="col-2"></div>
+		</div>
 
 		<?php do_action( 'woocommerce_checkout_after_customer_details' ); ?>
 

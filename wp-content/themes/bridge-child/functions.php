@@ -2,9 +2,11 @@
 // Exit if accessed directly
 if ( !defined( 'ABSPATH' ) ) exit;
 
+//global $woocommerce;
 /*echo "<pre>";
 print_r($_SERVER);
 echo "</pre>";*/
+
 add_action('wp_head', 'your_function');
 function your_function(){
 
@@ -85,7 +87,21 @@ function custom_add_to_cart_message( $message ) {
 
     function cart_json(){
         global $woocommerce;
+        global $current_currency_symbol;
+        global $current_currency;
         global $json;
+
+        $current_currency = get_woocommerce_currency();
+        $current_currency_symbol = get_woocommerce_currency_symbol( $current_currency );
+        //echo wp_specialchars( $current_currency_symbol );
+
+/*if( $_SERVER['REMOTE_ADDR'] == '115.112.129.194' ) {
+    echo "<pre>";
+        print_r($woocommerce);
+    echo "</pre>";
+}*/
+
+        
 
         $cart_items = $woocommerce->cart->cart_contents;
         $latest_added_item = end($cart_items);
@@ -98,6 +114,7 @@ function custom_add_to_cart_message( $message ) {
 
         if( isset($latest_added_item['quantity']) && !empty($latest_added_item['quantity']) && $latest_added_item['quantity'] != 0 ){
 
+            $details['product_id'] = $p_id; 
             $details['product_link'] = $product_link; 
             $details['product_image'] = $product_image; 
             $details['quantity'] = $latest_added_item['quantity']; 
@@ -106,6 +123,8 @@ function custom_add_to_cart_message( $message ) {
             $details['total_quantity'] = $woocommerce->cart->cart_contents_count; 
             $details['subtotal'] = $woocommerce->cart->subtotal;   
             $details['cart_url'] = $woocommerce->cart->get_checkout_url();  
+            $details['currency'] = $current_currency; 
+            $details['currency_symbol'] = $current_currency_symbol; 
             $json = json_encode($details);     
         }else{
             $json = 0;       
@@ -118,3 +137,14 @@ function custom_add_to_cart_message( $message ) {
     return $message;
 }
 add_filter( 'wc_add_to_cart_message', 'custom_add_to_cart_message' );
+
+function checkOutURL() {
+
+    global $woocommerce;
+    $checkOutURL = $woocommerce->cart->get_checkout_url();  ;
+    echo "<script>";
+    echo "var checkOutURL = '".$checkOutURL."';";
+    echo "</script>";
+
+}
+add_action('wp_head', 'checkOutURL');

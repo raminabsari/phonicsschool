@@ -106,6 +106,14 @@
 
 		throw new Error("This code required jQuery");
 	}
+
+function decodeEntities(s){
+    var str, temp= document.createElement('p');
+    temp.innerHTML= s;
+    str= temp.textContent || temp.innerText;
+    temp=null;
+    return str;
+}	
 	jQuery(document).ready(function(){
 
 		jQuery('#minicart-close a').click(function(){
@@ -117,12 +125,34 @@
 
 			jQuery('#prod_image').replaceWith(cart_json.product_image);
 			jQuery('#product_title').text(cart_json.product_title);
-			jQuery('#product_price').text("Price: $"+cart_json.price);			
+						
 			jQuery('#item_quantity').text("Quantity: "+cart_json.quantity);			
 			jQuery('#prod_items_count').text(cart_json.total_quantity+" items");
-			jQuery('#prod_items_subtotal').text("$"+cart_json.subtotal);			
+						
 			jQuery('.prod_image_link').attr('src', cart_json.product_link);			
 			jQuery('#continue-to-checkout').attr('href', cart_json.cart_url);			
+
+			if( cart_json.currency != "undefined" && cart_json.currency_symbol != "undefined" ) {
+
+				var symb = decodeEntities(cart_json.currency_symbol);
+				
+				if( cart_json.product_id != "undefined" ) {
+
+					var price_per_product = jQuery('#product-'+cart_json.product_id).find('.amount').text();
+				}
+				if( cart_json.currency == 'AED' ) {
+
+					jQuery('#product_price').text("Price: "+price_per_product);
+					//jQuery('#product_price').text("Price: "+cart_json.price+" "+cart_json.currency_symbol);
+					jQuery('#prod_items_subtotal').text(cart_json.subtotal+" "+symb);
+				}else{
+
+					jQuery('#product_price').text("Price: "+price_per_product);
+					//jQuery('#product_price').text("Price: "+cart_json.currency_symbol+" "+cart_json.price);
+					jQuery('#prod_items_subtotal').text(symb+" "+cart_json.subtotal);
+				}
+			}
+
 			showCartFlash();
 			setTimeout(function(){ hideCartFlash(); }, 10000);
 		}
