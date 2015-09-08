@@ -1,5 +1,5 @@
-
 # BEGIN WordPress
+
 <IfModule mod_rewrite.c>
 RewriteEngine On
 RewriteBase /new-phonicsschool/
@@ -7,6 +7,18 @@ RewriteRule ^index\.php$ - [L]
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule . /new-phonicsschool/index.php [L]
+</IfModule>
+
+<IfModule deflate_module>
+    # Enable compression for the following file types.
+    AddOutputFilterByType            \
+     DEFLATE                         \
+      application/javascript         \
+      text/css                       \
+      text/html                      \
+      text/javascript                \
+      text/plain                     \
+      text/xml
 </IfModule>
 
 # END WordPress
