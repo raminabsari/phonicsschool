@@ -1,5 +1,9 @@
 # BEGIN WordPress
 
+RewriteEngine On
+RewriteCond %{SERVER_PORT} 443
+RewriteRule (.*) http://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
+
 <IfModule mod_rewrite.c>
 RewriteEngine On
 RewriteBase /new-phonicsschool/
@@ -9,16 +13,22 @@ RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule . /new-phonicsschool/index.php [L]
 </IfModule>
 
-<IfModule deflate_module>
+<IfModule mod_deflate>
     # Enable compression for the following file types.
     AddOutputFilterByType            \
      DEFLATE                         \
       application/javascript         \
+      application/json               \
+      application/xml                \
       text/css                       \
       text/html                      \
       text/javascript                \
       text/plain                     \
-      text/xml
+      text/xml                       \
+	  font/otf					     \
+	  font/ttf                       \
+	  font/woff                      \
+	  font/woff2
 </IfModule>
 
 # END WordPress

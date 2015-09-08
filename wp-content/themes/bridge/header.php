@@ -3,13 +3,14 @@
 <html <?php language_attributes(); ?>>
 <head>
 	<meta charset="<?php bloginfo( 'charset' ); ?>" />
+	<meta name="viewport" content="width=device-width, user-scalable=no" />
 	<?php
 	if (isset($_SERVER['HTTP_USER_AGENT']) && (strpos($_SERVER['HTTP_USER_AGENT'], 'MSIE') !== false)) {
 		echo('<meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">');
 	} ?>
 
 	<title><?php wp_title(''); ?></title>
-
+	
 	<?php
 	/**
 	 * qode_header_meta hook
@@ -24,6 +25,13 @@
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 	<link rel="shortcut icon" type="image/x-icon" href="<?php echo esc_url($qode_options_proya['favicon_image']); ?>">
 	<link rel="apple-touch-icon" href="<?php echo esc_url($qode_options_proya['favicon_image']); ?>"/>
+	<script>
+	if ('addEventListener' in document) {
+		document.addEventListener('DOMContentLoaded', function() {
+			FastClick.attach(document.body);
+		}, false);
+	}
+	</script>
 	<?php wp_head(); ?>
 </head>
 
@@ -59,7 +67,7 @@
     float: left;
     font-size: 12px; margin-right: 18px;
     color: #000; 
-}  
+} 
 </style>	
 <div id="minicart-inner">
 	<div id="minicart-header">ADDED TO SHOPPING CART</div>

@@ -3119,14 +3119,14 @@ function prettyPhoto(){
 */
 function initMobileMenu(){
 	"use strict";
-	
-	$j(".mobile_menu_button > span").on('tap click', function(e){
-        e.preventDefault();
-
+	var clickOrTouch = (('ontouchend' in window)) ? 'touchend' : 'click';
+	$j(".mobile_menu_button > span").on(clickOrTouch, function(e){
+        e.stopPropagation();
+		e.preventDefault();
         if ($j(".mobile_menu > ul").is(":visible")){
-			$j(".mobile_menu > ul").slideUp(200);
+			$j(".mobile_menu > ul").slideUp('fast');
 		} else {
-			$j(".mobile_menu > ul").slideDown(200);
+			$j(".mobile_menu > ul").slideDown('fast');
 		}
 	});
 	
