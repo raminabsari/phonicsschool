@@ -1,4 +1,4 @@
-/*
+﻿/*
 Theme Name: Bridge Child
 Theme URI: http://demo.qodeinteractive.com/bridge/
 Template: bridge
@@ -34,9 +34,9 @@ body {
     This file is responsible for all typography styles.
 --------------------------------------------------------------------------------------------------------------------- */
 @font-face {
-  font-family: freight-sans-pro;
-  src: url('/new-phonicsschool/fonts/Linotte-SemiBold-webfont.eot');
-  src: url('/new-phonicsschool/fonts/Linotte-SemiBold-webfont.eot?#iefix') format('embedded-opentype'), url('/new-phonicsschool/fonts/Linotte-SemiBold-webfont.woff2') format('woff2'), url('/new-phonicsschool/fonts/Linotte-SemiBold-webfont.woff') format('woff'), url('/new-phonicsschool/fonts/Linotte-SemiBold-webfont.ttf') format('truetype'), url('/new-phonicsschool/fonts/Linotte-SemiBold-webfont.svg#linottesemibold') format('svg');
+  font-family: 'linottesemibold';
+  src: url('fonts/Linotte-SemiBold-webfont.eot');
+  src: url('fonts/Linotte-SemiBold-webfont.eot?#iefix') format('embedded-opentype'), url('fonts/Linotte-SemiBold-webfont.woff2') format('woff2'), url('fonts/Linotte-SemiBold-webfont.woff') format('woff'), url('fonts/Linotte-SemiBold-webfont.ttf') format('truetype'), url('fonts/Linotte-SemiBold-webfont.svg#linottesemibold') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -109,6 +109,11 @@ h1 {
     font-size: 48px;
   }
 }
+
+/* Hover Menu */
+.mobile_menu_button:hover ~ #menu-phonics-school-menu-1{display:block;}
+/* End Hver menu */
+
 a {
   color: #45b7dd;
   text-decoration: none;
@@ -2410,7 +2415,7 @@ table.shop_table.woocommerce-checkout-review-order-table tfoot tr.shipping td {
 @media only screen and (max-width: 1000px) {
   .intro-end-scroll-cta,
   .intro-start-scroll-cta {
-    display: block;
+    display: none;
   }
 }
 .section-intro .intro-title {
@@ -3054,8 +3059,8 @@ html.popup-open, .popup-open body {
 
 .newsletter.newsletter-subscription {
     margin: 0 auto;
-    width: 1100px;
-	padding:60px 0;
+    width: 500px;
+	padding:30px 0;
 }
 .newsletter.newsletter-subscription::before{
     -moz-user-select: none;
@@ -3071,7 +3076,108 @@ html.popup-open, .popup-open body {
     position: absolute;
     width: 100%;
 }
+.content_bottom .widget h5 {
+    color: #ffffff;
+    font-family: "linottesemibold","Arial Rounded","freight-sans-pro",Helvetica,Arial,sans-serif;
+    font-size: 48px;
+    margin-bottom: 0.25em;
+    position: relative;
+    text-shadow: 0 1px 20px rgba(0, 0, 0, 0.1); text-align:center;
+}
 
+.newsletter.newsletter-subscription p {
+    color: rgba(255, 255, 255, 0.9);
+    font-family: "freight-sans-pro",Helvetica,Arial,sans-serif;
+    font-size: 21px;
+    font-weight: 400;
+    letter-spacing: 0;
+    line-height: 1.45833em;
+    margin-bottom: 0.75em; text-align:center;
+}
+.newsletter.newsletter-subscription .fields-container {
+    float: left;
+    width: 70%;
+}
+
+.widget.widget_text {
+    padding: 40px 0;
+}
+.newsletter.newsletter-subscription .submit-button-container {
+    float: left;
+    margin-left: 2%;
+    width: 27.9%;
+}
+.newsletter-email {
+  -moz-appearance: none;
+    background: rgba(255, 255, 255, 0.2) none repeat scroll 0 0;
+    border: medium none;
+    border-radius: 5px;
+    color: #ffffff;
+    display: block;
+    font-family: inherit;
+    font-size: 24px;
+    height: 62px;
+    line-height: 62px;
+    margin: 0;
+    outline: medium none;
+    padding: 0 0 0 20px;
+    transition: background 200ms ease 0s;
+    width: 95%;
+}
+
+.newsletter-email:focus {
+    background: #ffffff none repeat scroll 0 0;
+    box-shadow: 0 0 5px #ffffff;
+    color: #616267;
+}
+
+.newsletter-submit {
+    background-color: transparent;
+    border: 2px solid #fff!important;
+    border-radius: 4px;
+    box-sizing: initial !important;
+    color: #fff!important;
+    cursor: pointer;
+    display: inline-block;
+    font-family: inherit;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    height: 58px;
+    letter-spacing: 1px;
+    line-height: 58px;
+    margin: 0;
+    outline: 0 none;
+    padding: 0 22px;
+    position: relative;
+    text-align: left;
+    text-decoration: none;
+    text-shadow: none;
+    text-transform: uppercase;
+    transition: color 0.1s linear 0s, background-color 0.1s linear 0s, border-color 0.1s linear 0s;
+    white-space: nowrap;
+    width: auto;
+}
+.newsletter-submit:hover{ background: #42d268!important;
+    border-color: #42d268!important;}
+.newsletter.newsletter-subscription .privacy-statement {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 14px; text-align:center;
+}
+
+.form-elements-container {
+    display: table;
+    margin: 7px 0;
+}
+
+.intro-heading-inner .intro-sub-heading  p{  color: rgba(255, 255, 255, 0.7);
+    font-family: "freight-sans-pro",Helvetica,Arial,sans-serif;
+    font-size: 24px;
+    font-weight: 400;
+    letter-spacing: 0;
+    line-height: 1.45833em;
+    margin: 0 auto 0.75em;
+    max-width: 450px;}
 /*---new css for signup end----*/
 .cookie-notice-container a {
   background: #fff;
