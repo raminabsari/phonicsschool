@@ -3119,38 +3119,40 @@ function prettyPhoto(){
 */
 function initMobileMenu(){
 	"use strict";
-	
-	$j(".mobile_menu_button > span").on('tap click', function(e){
-        e.preventDefault();
-
+	var clickOrTouch = (('ontouchend' in window)) ? 'touchend' : 'click';
+	$j(".mobile_menu_button > span").on(clickOrTouch, function(e){
+        e.stopPropagation();
+		e.preventDefault();
         if ($j(".mobile_menu > ul").is(":visible")){
-			$j(".mobile_menu > ul").slideUp(200);
+			$j(".mobile_menu > ul").slideUp('fast');
 		} else {
-			$j(".mobile_menu > ul").slideDown(200);
+			$j(".mobile_menu > ul").slideDown('fast');
 		}
 	});
 	
-	$j(".mobile_menu > ul > li.has_sub > span.mobile_arrow, .mobile_menu > ul > li.has_sub > h3, .mobile_menu > ul > li.has_sub > a[href*=#]").on('tap click', function(e){
+	$j(".mobile_menu > ul > li.has_sub > span.mobile_arrow, .mobile_menu > ul > li.has_sub > h3, .mobile_menu > ul > li.has_sub > a[href*=#]").on(clickOrTouch, function(e){
+		e.stopPropagation();
         e.preventDefault();
 
         if ($j(this).closest('li.has_sub').find("> ul.sub_menu").is(":visible")){
-			$j(this).closest('li.has_sub').find("> ul.sub_menu").slideUp(200);
+			$j(this).closest('li.has_sub').find("> ul.sub_menu").slideUp('fast');
 			$j(this).closest('li.has_sub').removeClass('open_sub');
 		} else {
 			$j(this).closest('li.has_sub').addClass('open_sub');
-			$j(this).closest('li.has_sub').find("> ul.sub_menu").slideDown(200);
+			$j(this).closest('li.has_sub').find("> ul.sub_menu").slideDown('fast');
 		}
 	});
 
-	$j(".mobile_menu > ul > li.has_sub > ul.sub_menu > li.has_sub > span.mobile_arrow, .mobile_menu > ul > li.has_sub > ul.sub_menu > li.has_sub > h3, .mobile_menu > ul > li.has_sub > ul.sub_menu > li.has_sub > a[href*=#]").on('tap click', function(e){
-        e.preventDefault();
+	$j(".mobile_menu > ul > li.has_sub > ul.sub_menu > li.has_sub > span.mobile_arrow, .mobile_menu > ul > li.has_sub > ul.sub_menu > li.has_sub > h3, .mobile_menu > ul > li.has_sub > ul.sub_menu > li.has_sub > a[href*=#]").on(clickOrTouch, function(e){
+        e.stopPropagation();
+		e.preventDefault();
 
         if ($j(this).parent().find("ul.sub_menu").is(":visible")){
-			$j(this).parent().find("ul.sub_menu").slideUp(200);
+			$j(this).parent().find("ul.sub_menu").slideUp("fast");
 			$j(this).parent().removeClass('open_sub');
 		} else {
 			$j(this).parent().addClass('open_sub');
-			$j(this).parent().find("ul.sub_menu").slideDown(200);
+			$j(this).parent().find("ul.sub_menu").slideDown("fast");
 		}
 	});
 	

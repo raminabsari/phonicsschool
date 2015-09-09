@@ -101,9 +101,12 @@ jQuery(document).ready(function($) {
 
         mcc_checkout_clone.css('display','block').insertAfter($('div#payment'));
         mcc_checkout.remove();
-    }
+    }	
 });
 
+document.addEventListener('DOMContentLoaded', function() {
+	FastClick.attach(document.body);
+}, false);
 // scroll to top code Starts here 
 
 var classname1 = document.getElementsByClassName("current");
